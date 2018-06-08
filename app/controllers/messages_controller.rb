@@ -67,9 +67,7 @@ class MessagesController < ApplicationController
     if @message.nil?
       @message = nil
       @warn_deletion="MESSAGE WAS DELETED OR DOES NOT EXIST."
-      puts "MESSAGE IS NIL"
     else
-      puts "MESSAGE FROM VIEWER IS #{@message.inspect}"
       @message.update_attribute(:url_tokens, @message.url_tokens - [params[:auth]])
     end
   end
