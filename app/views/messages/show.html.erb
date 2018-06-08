@@ -1,0 +1,20 @@
+<div>
+  <h1> Current Message: </h1>
+  <p>  <%= @message.body %> </p>
+  <div class="row">
+  <div class="add-url col-sm-4">
+    <span> Create URL to share with friends </span>
+    <%= simple_form_for @message, url: add_url_path(@message.token), method: :patch do |f| %>
+    <%= f.button :submit, "Create", class: 'btn btn-primary btn-sm' %>
+    <% end %>
+    <% if !@message.url_tokens.empty? %>
+      <% @message.url_tokens.each_with_index do |t, i|%>
+      <ul>
+        <li> <%= link_to "URL #{i+1}", "http://localhost:3000/messages/auth/#{t}" %> </li>
+        <hr />
+      </ul>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+</div>

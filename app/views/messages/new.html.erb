@@ -1,0 +1,17 @@
+  <div class="text-center">
+    <small>
+      TMWSD is a secure messaging service. Messages sent are encrypted, securely transferred, and automatically deleted when they are retrieved.
+    </small>
+  </div>
+
+<div class="message-box">
+  <div class="col-sm-12">
+    <%= simple_form_for @message do |f| %>
+    <%= f.input :body, :input_html => { 'rows' => 10}, label: false %>
+    <%= f.input :password_digest, label: false %>
+    <%= f.input :tos_accepted,  :as => :boolean, :input_html => { :checked => "unchecked" } , label: "I accept the terms of service.", class:"pull-left"%>
+    <%= f.button :submit, "SAVE THIS MESSAGE", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+  <hr />
+</div>

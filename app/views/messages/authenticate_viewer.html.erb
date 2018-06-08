@@ -1,0 +1,6 @@
+<div>
+  <%= simple_form_for @message, url: viewer_authenticated_path(@message.token, @auth), method: :post do |f| %>
+    <%= f.input :password %>
+    <%= f.button :submit, "Submit Password", class: 'btn btn-primary' %>
+  <% end %>
+</div>

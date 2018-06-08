@@ -1,0 +1,15 @@
+<div class="message-box">
+  <% if @message.nil? %>
+    <h1> Not Found </h1>
+    <span>
+      The message you are attempting to access either
+      does not exist or has already been retrieved.
+    </span>
+  <% else %>
+    <h1> <%= @auth_error %> </h1>
+    <h1> MESSAGE DECRYPTED </h1>
+    <p> <%= @message.body %> </p>
+    <strong> SENT ON: <strong>
+    <span> <%= @message.created_at.strftime('%B %d, %Y') %> </span>
+  <% end %>
+</div>

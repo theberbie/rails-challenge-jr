@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TMWSD</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-custom">
+      <%=link_to "TMWSD.", root_path, class:'navbar-brand mb-0 h1' %>
+      <div>
+        <ul class="navbar-ul">
+          <a href="#"> <li> About |</li> </a>
+          <a href="#"> <li> Sign Up |</li> </a>
+          <a href="#"> <li> Sign In </li> </a>
+        </ul>
+        <span class="statement"> This Message Will Self Destruct. </span>
+      </div>
+    </nav>
+      <hr class="nav-horizontal mb-0"/>
+      <div class="container">
+
+      <% if flash[:error].present? %>
+      <div class="col-xs-10 col-xs-offset-1 alert alert-danger">
+      <%= flash[:error].html_safe %>
+      </div>
+      <%end%>
+    <%= yield %>
+  </body>
+</html>

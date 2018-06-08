@@ -1,0 +1,16 @@
+<div>
+  <% if @message.nil? %>
+    <h1> Not Found </h1>
+    <span>
+      The message you are attempting to access either
+      does not exist or has already been retrieved.
+    </span>
+  <% else %>
+  <div class="text-box">
+      <h1> MESSAGE DECRYPTED </h1>
+      <p> <%= @message.body %> </p>
+      <strong> SENT ON: </strong>
+      <span> <%= @message.create_at %> </span>
+    <% end %>
+  </div>
+</div>
