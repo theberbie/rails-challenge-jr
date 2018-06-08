@@ -10,7 +10,7 @@
     <% if !@message.url_tokens.empty? %>
       <% @message.url_tokens.each_with_index do |t, i|%>
       <ul>
-        <li> <%= link_to "URL #{i+1}", "http://localhost:3000/messages/auth/#{t}" %> </li>
+        <li> <%= link_to "URL #{i+1}", "#{root_path}messages/auth/#{t}" %> </li>
         <hr />
       </ul>
       <% end %>
