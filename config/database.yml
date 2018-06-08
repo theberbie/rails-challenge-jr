@@ -78,3 +78,8 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+production:
+  <<: *default
+  database: tmwsd_production
+  username: tmwsd
+  password: <%= ENV['TMWSD_DATABASE_PASSWORD'] %>
