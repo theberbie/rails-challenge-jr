@@ -7,6 +7,5 @@ Rails.application.routes.draw do
   post 'messages/:auth/viewer_authenticated' => 'messages#viewer_authenticated', as: :viewer_authenticated
   patch 'messages/:token/add_url' => 'messages#add_url', as: :add_url
   get 'messages/secure_message/:auth' => 'messages#view_secure_message', as: :view_secure_message
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
